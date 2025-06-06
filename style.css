@@ -1,0 +1,18 @@
+.gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        @media (prefers-color-scheme: dark) {
+            .dark-mode-bg {
+                background: linear-gradient(135deg, #1e3a8a 0%, #312e81 100%);
+            }
+        }
+
+        

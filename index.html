@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnEase - Ứng dụng học tiếng Anh thông minh</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'education-blue': '#4A90E2',
+                        'education-green': '#7ED321',
+                        'education-orange': '#F5A623',
+                        'education-purple': '#9013FE',
+                        'education-teal': '#50C878'
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'bounce-slow': 'bounce 2s infinite',
+                        'pulse-slow': 'pulse 3s infinite',
+                        'wiggle': 'wiggle 1s ease-in-out infinite',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out',
+                        'slide-in-left': 'slideInLeft 0.8s ease-out',
+                        'slide-in-right': 'slideInRight 0.8s ease-out',
+                        'spin-slow': 'spin 8s linear infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate'
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        wiggle: {
+                            '0%, 100%': { transform: 'rotate(-3deg)' },
+                            '50%': { transform: 'rotate(3deg)' }
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        slideInLeft: {
+                            '0%': { opacity: '0', transform: 'translateX(-50px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' }
+                        },
+                        slideInRight: {
+                            '0%': { opacity: '0', transform: 'translateX(50px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' }
+                        },
+                        glow: {
+                            '0%': { filter: 'drop-shadow(0 0 5px rgba(96, 165, 250, 0.5))' },
+                            '100%': { filter: 'drop-shadow(0 0 20px rgba(96, 165, 250, 0.8))' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900">
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 glass-effect border-b border-white/20">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <img src="https://pfst.cf2.poecdn.net/base/image/6c0f9a96da42261d4d0c148df66eebdb9788286b9f2a71534dceadd302601e78?w=512&h=512" 
+                         alt="LearnEase" 
+                         class="w-10 h-10 animate-bounce-slow">
+                    <span class="text-xl font-bold text-white">LearnEase</span>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#features" class="text-white hover:text-education-green transition-colors">Tính năng</a>
+                    <a href="#how-it-works" class="text-white hover:text-education-green transition-colors">Cách hoạt động</a>
+                    <a href="#download" class="text-white hover:text-education-green transition-colors">Tải về</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg dark:dark-mode-bg min-h-screen flex items-center justify-center relative overflow-hidden">
+        <!-- Floating shapes -->
+        <div class="absolute inset-0">
+            <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-education-green/20 rounded-full animate-float"></div>
+            <div class="absolute top-3/4 right-1/4 w-48 h-48 bg-education-orange/20 rounded-full animate-float" style="animation-delay: 2s;"></div>
+            <div class="absolute top-1/2 left-1/3 w-32 h-32 bg-education-purple/20 rounded-full animate-float" style="animation-delay: 4s;"></div>
+        </div>
+
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <div class="animate-fade-in-up">
+                <img src="https://pfst.cf2.poecdn.net/base/image/6c0f9a96da42261d4d0c148df66eebdb9788286b9f2a71534dceadd302601e78?w=512&h=512" 
+                     alt="LearnEase Logo" 
+                     class="w-32 h-32 mx-auto mb-8 animate-wiggle">
+                <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">
+                    Học tiếng Anh với
+                    <span class="text-education-green">AI thông minh</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto">
+                    Trải nghiệm cách học tiếng Anh hoàn toàn mới với công nghệ AI tiên tiến. 
+                    Cá nhân hóa từng bài học theo trình độ và mục tiêu của bạn.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#download" class="bg-education-green hover:bg-green-600 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all transform hover:scale-105 shadow-lg">
+                        Tải về miễn phí
+                    </a>
+                    <a href="#features" class="border-2 border-white text-white hover:bg-white hover:text-gray-800 px-8 py-4 rounded-full font-semibold text-lg transition-all">
+                        Khám phá tính năng
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white dark:bg-gray-800 relative overflow-hidden">
+        <!-- Decorative background elements -->
+        <div class="absolute inset-0">
+            <div class="absolute top-10 left-10 w-32 h-32 bg-education-blue/5 rounded-full animate-pulse-slow"></div>
+            <div class="absolute top-40 right-20 w-24 h-24 bg-education-green/5 rounded-full animate-float"></div>
+            <div class="absolute bottom-20 left-1/4 w-40 h-40 bg-education-orange/5 rounded-full animate-pulse-slow" style="animation-delay: 2s;"></div>
+            <div class="absolute bottom-40 right-10 w-28 h-28 bg-education-purple/5 rounded-full animate-float" style="animation-delay: 3s;"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-20 animate-fade-in-up">
+                <h2 class="text-4xl md:text-6xl font-bold text-gray-800 dark:text-white mb-6">
+                    Tính năng 
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-education-blue to-education-green">
+                        nổi bật
+                    </span>
+                </h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                    LearnEase mang đến trải nghiệm học tập cá nhân hóa với những tính năng tiên tiến nhất
+                </p>
+            </div>
+
+            <!-- Main Features Grid -->
+            <div class="grid lg:grid-cols-3 gap-16 mb-16">
+                <!-- Feature 1 - Center Large -->
+                <div class="lg:col-span-3 flex justify-center">
+                    <div class="feature-hexagon group cursor-pointer transform hover:scale-105 transition-all duration-500 relative">
+                        <div class="absolute inset-0 bg-gradient-to-br from-education-blue to-blue-700 rounded-3xl transform rotate-6 group-hover:rotate-12 transition-transform duration-500 opacity-20"></div>
+                        <div class="relative bg-gradient-to-br from-education-blue to-blue-600 p-12 rounded-3xl text-white shadow-2xl hover:shadow-education-blue/25 transition-all duration-500">
+                            <div class="text-center">
+                                <div class="mb-6">
+                                    <svg class="w-20 h-20 mx-auto animate-glow" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <defs>
+                                            <linearGradient id="robotGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:1" />
+                                                <stop offset="100%" style="stop-color:#E0E7FF;stop-opacity:1" />
+                                            </linearGradient>
+                                        </defs>
+                                        <!-- Robot Head -->
+                                        <rect x="60" y="40" width="80" height="70" rx="20" fill="url(#robotGradient)" class="animate-wiggle"/>
+                                        <!-- Eyes -->
+                                        <circle cx="80" cy="70" r="8" fill="#3B82F6" class="animate-ping" style="animation-duration: 2s;"/>
+                                        <circle cx="120" cy="70" r="8" fill="#3B82F6" class="animate-ping" style="animation-duration: 2s; animation-delay: 0.5s;"/>
+                                        <!-- Eye pupils -->
+                                        <circle cx="80" cy="70" r="4" fill="#1F2937">
+                                            <animate attributeName="r" values="4;2;4" dur="3s" repeatCount="indefinite"/>
+                                        </circle>
+                                        <circle cx="120" cy="70" r="4" fill="#1F2937">
+                                            <animate attributeName="r" values="4;2;4" dur="3s" repeatCount="indefinite" begin="0.5s"/>
+                                        </circle>
+                                        <!-- Mouth -->
+                                        <rect x="90" y="85" width="20" height="6" rx="3" fill="#3B82F6">
+                                            <animate attributeName="width" values="20;30;20" dur="2s" repeatCount="indefinite"/>
+                                            <animate attributeName="x" values="90;85;90" dur="2s" repeatCount="indefinite"/>
+                                        </rect>
+                                        <!-- Antenna -->
+                                        <rect x="98" y="20" width="4" height="25" fill="url(#robotGradient)"/>
+                                        <circle cx="100" cy="18" r="6" fill="#F59E0B" class="animate-ping"/>
+                                        <!-- Body -->
+                                        <rect x="70" y="110" width="60" height="60" rx="15" fill="url(#robotGradient)" opacity="0.9"/>
+                                        <!-- Control Panel -->
+                                        <rect x="85" y="125" width="30" height="20" rx="5" fill="#3B82F6" opacity="0.3"/>
+                                        <circle cx="90" cy="135" r="3" fill="#10B981" class="animate-pulse"/>
+                                        <circle cx="100" cy="135" r="3" fill="#F59E0B" class="animate-pulse" style="animation-delay: 0.3s;"/>
+                                        <circle cx="110" cy="135" r="3" fill="#EF4444" class="animate-pulse" style="animation-delay: 0.6s;"/>
+                                        <!-- Arms -->
+                                        <rect x="30" y="120" width="40" height="12" rx="6" fill="url(#robotGradient)" class="animate-float"/>
+                                        <rect x="130" y="120" width="40" height="12" rx="6" fill="url(#robotGradient)" class="animate-float" style="animation-delay: 1s;"/>
+                                        <!-- Hands -->
+                                        <circle cx="25" cy="126" r="8" fill="#60A5FA" class="animate-bounce-slow"/>
+                                        <circle cx="175" cy="126" r="8" fill="#60A5FA" class="animate-bounce-slow" style="animation-delay: 0.5s;"/>
+                                        <!-- Speech bubbles -->
+                                        <circle cx="30" cy="60" r="2" fill="#60A5FA" class="animate-ping" style="animation-delay: 1s;"/>
+                                        <circle cx="40" cy="55" r="1.5" fill="#60A5FA" class="animate-ping" style="animation-delay: 1.3s;"/>
+                                        <circle cx="35" cy="50" r="1" fill="#60A5FA" class="animate-ping" style="animation-delay: 1.6s;"/>
+                                    </svg>
+                                </div>
+                                <h3 class="text-3xl font-bold mb-6">AI Thông Minh</h3>
+                                <p class="text-blue-100 text-lg leading-relaxed max-w-md">
+                                    Giáo viên AI cá nhân hóa phương pháp học theo trình độ và tốc độ học của bạn. 
+                                    Trải nghiệm học tập thông minh như chưa từng có.
+                                </p>
+                            </div>
+                            <div class="absolute -top-2 -right-2 w-6 h-6 bg-yellow-400 rounded-full animate-ping"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Secondary Features -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                <!-- Feature 2 -->
+                <div class="feature-orbit group cursor-pointer" style="animation-delay: 0.2s;">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-br from-education-green to-green-600 rounded-full blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
+                        <div class="relative bg-white dark:bg-gray-700 p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-100 dark:border-gray-600">
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-gradient-to-br from-education-green to-green-600 rounded-full flex items-center justify-center mx-auto mb-6 transform group-hover:rotate-12 transition-transform duration-500">
+                                    <svg class="w-8 h-8" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <defs>
+                                            <linearGradient id="micGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:1" />
+                                                <stop offset="100%" style="stop-color:#F3F4F6;stop-opacity:1" />
+                                            </linearGradient>
+                                        </defs>
+                                        <!-- Microphone Body -->
+                                        <rect x="40" y="20" width="20" height="35" rx="10" fill="url(#micGradient)" stroke="#059669" stroke-width="2"/>
+                                        <!-- Microphone Stand -->
+                                        <rect x="48" y="55" width="4" height="25" fill="#059669"/>
+                                        <rect x="35" y="77" width="30" height="3" rx="1.5" fill="#059669"/>
+                                        <!-- Sound Waves -->
+                                        <path d="M 65 30 Q 75 35 65 40" stroke="#10B981" stroke-width="2" fill="none" class="animate-pulse" opacity="0.8"/>
+                                        <path d="M 70 25 Q 85 35 70 45" stroke="#10B981" stroke-width="2" fill="none" class="animate-pulse" style="animation-delay: 0.3s;" opacity="0.6"/>
+                                        <path d="M 75 20 Q 95 35 75 50" stroke="#10B981" stroke-width="2" fill="none" class="animate-pulse" style="animation-delay: 0.6s;" opacity="0.4"/>
+                                        <!-- Microphone Grid -->
+                                        <rect x="43" y="25" width="14" height="2" rx="1" fill="#059669" opacity="0.3"/>
+                                        <rect x="43" y="30" width="14" height="2" rx="1" fill="#059669" opacity="0.3"/>
+                                        <rect x="43" y="35" width="14" height="2" rx="1" fill="#059669" opacity="0.3"/>
+                                        <rect x="43" y="40" width="14" height="2" rx="1" fill="#059669" opacity="0.3"/>
+                                        <rect x="43" y="45" width="14" height="2" rx="1" fill="#059669" opacity="0.3"/>
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-4">Luyện Phát Âm AI</h3>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">Công nghệ nhận diện giọng nói giúp cải thiện phát âm chính xác</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-orbit group cursor-pointer" style="animation-delay: 0.4s;">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-br from-education-orange to-orange-600 rounded-full blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
+                        <div class="relative bg-white dark:bg-gray-700 p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-100 dark:border-gray-600">
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-gradient-to-br from-education-orange to-orange-600 rounded-full flex items-center justify-center mx-auto mb-6 transform group-hover:rotate-12 transition-transform duration-500">
+                                    <svg class="w-8 h-8" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <defs>
+                                            <linearGradient id="bookGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:1" />
+                                                <stop offset="100%" style="stop-color:#F3F4F6;stop-opacity:1" />
+                                            </linearGradient>
+                                        </defs>
+                                        <!-- Book Base -->
+                                        <rect x="20" y="25" width="60" height="50" rx="3" fill="url(#bookGradient)" stroke="#F59E0B" stroke-width="2"/>
+                                        <!-- Book Spine -->
+                                        <rect x="20" y="25" width="8" height="50" rx="3" fill="#F59E0B"/>
+                                        <!-- Pages -->
+                                        <rect x="32" y="30" width="45" height="2" rx="1" fill="#F59E0B" opacity="0.3" class="animate-pulse" style="animation-delay: 0.1s;"/>
+                                        <rect x="32" y="35" width="40" height="2" rx="1" fill="#F59E0B" opacity="0.4" class="animate-pulse" style="animation-delay: 0.2s;"/>
+                                        <rect x="32" y="40" width="42" height="2" rx="1" fill="#F59E0B" opacity="0.3" class="animate-pulse" style="animation-delay: 0.3s;"/>
+                                        <rect x="32" y="45" width="38" height="2" rx="1" fill="#F59E0B" opacity="0.4" class="animate-pulse" style="animation-delay: 0.4s;"/>
+                                        <rect x="32" y="50" width="43" height="2" rx="1" fill="#F59E0B" opacity="0.3" class="animate-pulse" style="animation-delay: 0.5s;"/>
+                                        <rect x="32" y="55" width="39" height="2" rx="1" fill="#F59E0B" opacity="0.4" class="animate-pulse" style="animation-delay: 0.6s;"/>
+                                        <rect x="32" y="60" width="41" height="2" rx="1" fill="#F59E0B" opacity="0.3" class="animate-pulse" style="animation-delay: 0.7s;"/>
+                                        <!-- Bookmark -->
+                                        <rect x="65" y="25" width="4" height="20" fill="#DC2626" class="animate-wiggle"/>
+                                        <polygon points="65,25 69,25 67,20" fill="#DC2626" class="animate-wiggle"/>
+                                        <!-- Sparkles -->
+                                        <circle cx="85" cy="35" r="1.5" fill="#FBBF24" class="animate-ping" style="animation-delay: 0.2s;"/>
+                                        <circle cx="75" cy="65" r="1" fill="#FBBF24" class="animate-ping" style="animation-delay: 0.8s;"/>
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-4">Học Từ Vựng Thông Minh</h3>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">Hệ thống ghi nhớ thông minh giúp học từ vựng hiệu quả</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-orbit group cursor-pointer" style="animation-delay: 0.6s;">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-br from-education-purple to-purple-600 rounded-full blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
+                        <div class="relative bg-white dark:bg-gray-700 p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-100 dark:border-gray-600">
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-gradient-to-br from-education-purple to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6 transform group-hover:rotate-12 transition-transform duration-500">
+                                    <svg class="w-8 h-8" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <defs>
+                                            <linearGradient id="targetGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:1" />
+                                                <stop offset="100%" style="stop-color:#F3F4F6;stop-opacity:1" />
+                                            </linearGradient>
+                                        </defs>
+                                        <!-- Outer Ring -->
+                                        <circle cx="50" cy="50" r="35" fill="none" stroke="#DC2626" stroke-width="3" opacity="0.8" class="animate-pulse"/>
+                                        <!-- Middle Ring -->
+                                        <circle cx="50" cy="50" r="25" fill="none" stroke="#F59E0B" stroke-width="3" opacity="0.9" class="animate-pulse" style="animation-delay: 0.3s;"/>
+                                        <!-- Inner Ring -->
+                                        <circle cx="50" cy="50" r="15" fill="none" stroke="#10B981" stroke-width="3" class="animate-pulse" style="animation-delay: 0.6s;"/>
+                                        <!-- Bullseye -->
+                                        <circle cx="50" cy="50" r="8" fill="#8B5CF6" class="animate-ping"/>
+                                        <circle cx="50" cy="50" r="4" fill="url(#targetGradient)"/>
+                                        <!-- Arrow -->
+                                        <g class="animate-bounce-slow">
+                                            <rect x="75" y="48" width="20" height="4" rx="2" fill="#374151" transform="rotate(45 75 50)"/>
+                                            <polygon points="90,45 95,50 90,55 92,50" fill="#374151" transform="rotate(45 85 50)"/>
+                                        </g>
+                                        <!-- Crosshairs -->
+                                        <line x1="20" y1="50" x2="35" y2="50" stroke="#8B5CF6" stroke-width="2" opacity="0.5"/>
+                                        <line x1="65" y1="50" x2="80" y2="50" stroke="#8B5CF6" stroke-width="2" opacity="0.5"/>
+                                        <line x1="50" y1="20" x2="50" y2="35" stroke="#8B5CF6" stroke-width="2" opacity="0.5"/>
+                                        <line x1="50" y1="65" x2="50" y2="80" stroke="#8B5CF6" stroke-width="2" opacity="0.5"/>
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-4">Lộ Trình Cá Nhân</h3>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">AI tạo lộ trình học tập riêng biệt phù hợp với bạn</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature-orbit group cursor-pointer" style="animation-delay: 0.8s;">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-br from-education-teal to-teal-600 rounded-full blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
+                        <div class="relative bg-white dark:bg-gray-700 p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-100 dark:border-gray-600">
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-gradient-to-br from-education-teal to-teal-600 rounded-full flex items-center justify-center mx-auto mb-6 transform group-hover:rotate-12 transition-transform duration-500">
+                                    <svg class="w-8 h-8" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <defs>
+                                            <linearGradient id="gameGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:1" />
+                                                <stop offset="100%" style="stop-color:#F3F4F6;stop-opacity:1" />
+                                            </linearGradient>
+                                        </defs>
+                                        <!-- Controller Body -->
+                                        <ellipse cx="50" cy="55" rx="35" ry="20" fill="url(#gameGradient)" stroke="#50C878" stroke-width="2"/>
+                                        <!-- D-Pad -->
+                                        <rect x="25" y="48" width="12" height="4" rx="2" fill="#50C878" class="animate-pulse"/>
+                                        <rect x="29" y="44" width="4" height="12" rx="2" fill="#50C878" class="animate-pulse" style="animation-delay: 0.2s;"/>
+                                        <!-- Action Buttons -->
+                                        <circle cx="70" cy="45" r="4" fill="#DC2626" class="animate-ping" style="animation-delay: 0.1s;"/>
+                                        <circle cx="80" cy="50" r="4" fill="#F59E0B" class="animate-ping" style="animation-delay: 0.3s;"/>
+                                        <circle cx="70" cy="55" r="4" fill="#10B981" class="animate-ping" style="animation-delay: 0.5s;"/>
+                                        <circle cx="60" cy="50" r="4" fill="#3B82F6" class="animate-ping" style="animation-delay: 0.7s;"/>
+                                        <!-- Shoulder Buttons -->
+                                        <rect x="15" y="40" width="12" height="6" rx="3" fill="#50C878" opacity="0.7" class="animate-float"/>
+                                        <rect x="73" y="40" width="12" height="6" rx="3" fill="#50C878" opacity="0.7" class="animate-float" style="animation-delay: 0.5s;"/>
+                                        <!-- Center Button -->
+                                        <circle cx="50" cy="55" r="3" fill="#8B5CF6" class="animate-pulse" style="animation-delay: 0.4s;"/>
+                                        <!-- Sparkles for game effect -->
+                                        <circle cx="35" cy="35" r="1" fill="#FBBF24" class="animate-ping" style="animation-delay: 0.8s;"/>
+                                        <circle cx="65" cy="35" r="1.5" fill="#FBBF24" class="animate-ping" style="animation-delay: 1.2s;"/>
+                                        <circle cx="85" cy="65" r="1" fill="#FBBF24" class="animate-ping" style="animation-delay: 1.6s;"/>
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-4">Gamification</h3>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">Học tiếng Anh thú vị với hệ thống game hóa</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Feature -->
+            <div class="flex justify-center">
+                <div class="feature-special group cursor-pointer max-w-md" style="animation-delay: 1s;">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-br from-pink-500 to-rose-600 rounded-3xl transform -rotate-3 group-hover:rotate-3 transition-transform duration-500 opacity-20"></div>
+                        <div class="relative bg-gradient-to-br from-pink-500 to-rose-600 p-8 rounded-3xl text-white shadow-xl hover:shadow-2xl transition-all duration-500">
+                            <div class="text-center">
+                                <div class="mb-4">
+                                    <svg class="w-16 h-16 mx-auto animate-spin-slow" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <defs>
+                                            <linearGradient id="chartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:1" />
+                                                <stop offset="100%" style="stop-color:#F9FAFB;stop-opacity:1" />
+                                            </linearGradient>
+                                        </defs>
+                                        <!-- Chart Background -->
+                                        <rect x="20" y="20" width="80" height="60" rx="5" fill="url(#chartGradient)" stroke="#EC4899" stroke-width="2"/>
+                                        <!-- Chart Bars -->
+                                        <rect x="30" y="60" width="8" height="15" rx="2" fill="#EC4899" class="animate-bounce-slow" style="animation-delay: 0.1s;">
+                                            <animate attributeName="height" values="15;25;15" dur="2s" repeatCount="indefinite"/>
+                                            <animate attributeName="y" values="60;50;60" dur="2s" repeatCount="indefinite"/>
+                                        </rect>
+                                        <rect x="42" y="55" width="8" height="20" rx="2" fill="#F472B6" class="animate-bounce-slow" style="animation-delay: 0.3s;">
+                                            <animate attributeName="height" values="20;30;20" dur="2s" repeatCount="indefinite" begin="0.2s"/>
+                                            <animate attributeName="y" values="55;45;55" dur="2s" repeatCount="indefinite" begin="0.2s"/>
+                                        </rect>
+                                        <rect x="54" y="45" width="8" height="30" rx="2" fill="#EC4899" class="animate-bounce-slow" style="animation-delay: 0.5s;">
+                                            <animate attributeName="height" values="30;40;30" dur="2s" repeatCount="indefinite" begin="0.4s"/>
+                                            <animate attributeName="y" values="45;35;45" dur="2s" repeatCount="indefinite" begin="0.4s"/>
+                                        </rect>
+                                        <rect x="66" y="50" width="8" height="25" rx="2" fill="#F472B6" class="animate-bounce-slow" style="animation-delay: 0.7s;">
+                                            <animate attributeName="height" values="25;35;25" dur="2s" repeatCount="indefinite" begin="0.6s"/>
+                                            <animate attributeName="y" values="50;40;50" dur="2s" repeatCount="indefinite" begin="0.6s"/>
+                                        </rect>
+                                        <rect x="78" y="40" width="8" height="35" rx="2" fill="#EC4899" class="animate-bounce-slow" style="animation-delay: 0.9s;">
+                                            <animate attributeName="height" values="35;45;35" dur="2s" repeatCount="indefinite" begin="0.8s"/>
+                                            <animate attributeName="y" values="40;30;40" dur="2s" repeatCount="indefinite" begin="0.8s"/>
+                                        </rect>
+                                        <!-- Trend Line -->
+                                        <path d="M 34 65 Q 46 60 58 50 T 82 40" stroke="#FBBF24" stroke-width="3" fill="none" opacity="0.8" class="animate-pulse">
+                                            <animate attributeName="stroke-dasharray" values="0,100;100,0;0,100" dur="3s" repeatCount="indefinite"/>
+                                        </path>
+                                        <!-- Data Points -->
+                                        <circle cx="34" cy="65" r="3" fill="#FBBF24" class="animate-ping" style="animation-delay: 0.2s;"/>
+                                        <circle cx="58" cy="50" r="3" fill="#FBBF24" class="animate-ping" style="animation-delay: 0.6s;"/>
+                                        <circle cx="82" cy="40" r="3" fill="#FBBF24" class="animate-ping" style="animation-delay: 1s;"/>
+                                        <!-- Growth Arrow -->
+                                        <g class="animate-float">
+                                            <path d="M 85 45 L 95 35 L 90 40 L 95 35 L 90 30" stroke="#10B981" stroke-width="2" fill="none"/>
+                                            <circle cx="95" cy="35" r="2" fill="#10B981"/>
+                                        </g>
+                                        <!-- Sparkles for progress -->
+                                        <circle cx="25" cy="25" r="1" fill="#FBBF24" class="animate-ping" style="animation-delay: 1.2s;"/>
+                                        <circle cx="95" cy="25" r="1.5" fill="#FBBF24" class="animate-ping" style="animation-delay: 1.8s;"/>
+                                        <circle cx="105" cy="65" r="1" fill="#FBBF24" class="animate-ping" style="animation-delay: 2.2s;"/>
+                                    </svg>
+                                </div>
+                                <h3 class="text-2xl font-bold mb-4">Báo Cáo Tiến Độ</h3>
+                                <p class="text-pink-100">Theo dõi tiến độ học tập chi tiết với báo cáo và phân tích AI thông minh</p>
+                            </div>
+                            <div class="absolute top-4 right-4">
+                                <div class="w-3 h-3 bg-yellow-400 rounded-full animate-ping"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Floating particles -->
+            <div class="absolute inset-0 pointer-events-none">
+                <div class="absolute top-1/4 left-1/4 w-2 h-2 bg-education-blue rounded-full animate-ping" style="animation-delay: 0.5s;"></div>
+                <div class="absolute top-3/4 right-1/3 w-1 h-1 bg-education-green rounded-full animate-ping" style="animation-delay: 1.5s;"></div>
+                <div class="absolute top-1/2 right-1/4 w-2 h-2 bg-education-orange rounded-full animate-ping" style="animation-delay: 2.5s;"></div>
+                <div class="absolute bottom-1/4 left-1/3 w-1 h-1 bg-education-purple rounded-full animate-ping" style="animation-delay: 3.5s;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 bg-gray-100 dark:bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-6">
+                    Cách hoạt động
+                </h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                    Chỉ 3 bước đơn giản để bắt đầu hành trình học tiếng Anh với AI
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="text-center group">
+                    <div class="w-24 h-24 bg-education-blue rounded-full flex items-center justify-center mx-auto mb-6 transform group-hover:scale-110 transition-transform">
+                        <span class="text-3xl font-bold text-white">1</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">Đăng ký và đánh giá trình độ</h3>
+                    <p class="text-gray-600 dark:text-gray-300">AI sẽ đánh giá trình độ hiện tại của bạn qua bài test ngắn</p>
+                </div>
+
+                <div class="text-center group">
+                    <div class="w-24 h-24 bg-education-green rounded-full flex items-center justify-center mx-auto mb-6 transform group-hover:scale-110 transition-transform">
+                        <span class="text-3xl font-bold text-white">2</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">Nhận lộ trình cá nhân</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Hệ thống tạo lộ trình học tập phù hợp với mục tiêu và thời gian</p>
+                </div>
+
+                <div class="text-center group">
+                    <div class="w-24 h-24 bg-education-orange rounded-full flex items-center justify-center mx-auto mb-6 transform group-hover:scale-110 transition-transform">
+                        <span class="text-3xl font-bold text-white">3</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-4">Học tập và cải thiện</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Bắt đầu học với AI tutor và theo dõi tiến độ hàng ngày</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="py-20 gradient-bg dark:dark-mode-bg relative overflow-hidden">
+        <!-- Floating elements -->
+        <div class="absolute inset-0">
+            <div class="absolute top-1/4 right-1/4 w-40 h-40 bg-white/10 rounded-full animate-pulse-slow"></div>
+            <div class="absolute bottom-1/4 left-1/4 w-60 h-60 bg-white/5 rounded-full animate-float"></div>
+        </div>
+
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <div class="animate-fade-in-up">
+                <img src="https://pfst.cf2.poecdn.net/base/image/6c0f9a96da42261d4d0c148df66eebdb9788286b9f2a71534dceadd302601e78?w=512&h=512" 
+                     alt="LearnEase Logo" 
+                     class="w-24 h-24 mx-auto mb-8 animate-bounce-slow">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                    Sẵn sàng bắt đầu?
+                </h2>
+                <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+                    Tải về LearnEase ngay hôm nay và bắt đầu hành trình chinh phục tiếng Anh với AI
+                </p>
+                
+                <!-- Download Button -->
+                <div class="flex justify-center mb-8">
+                    <a href="https://play.google.com/store" 
+                       target="_blank"
+                       class="inline-flex items-center bg-black hover:bg-gray-800 text-white px-8 py-4 rounded-2xl font-semibold text-lg transition-all transform hover:scale-105 shadow-2xl">
+                        <svg class="w-8 h-8 mr-3" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.92 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
+                        </svg>
+                        Tải về cho Android
+                    </a>
+                </div>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-education-green mb-2">100K+</div>
+                        <div class="text-white/80">Người dùng</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-education-orange mb-2">4.8★</div>
+                        <div class="text-white/80">Đánh giá</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-education-purple mb-2">1M+</div>
+                        <div class="text-white/80">Bài học</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-education-teal mb-2">24/7</div>
+                        <div class="text-white/80">AI Support</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 dark:bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="flex items-center space-x-3 mb-4 md:mb-0">
+                    <img src="https://pfst.cf2.poecdn.net/base/image/6c0f9a96da42261d4d0c148df66eebdb9788286b9f2a71534dceadd302601e78?w=512&h=512" 
+                         alt="LearnEase Logo" 
+                         class="w-8 h-8">
+                    <span class="text-lg font-semibold">LearnEase</span>
+                </div>
+                <div class="text-sm text-gray-400">
+                    © 2025 LearnEase. Tất cả quyền được bảo lưu.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
